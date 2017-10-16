@@ -8,7 +8,7 @@
 ## 2. 磁盘分区
 ## 3. 设置用户名和密码
 ## 4. 网络配置
-用vim修改**/etc/sysconfig/network-scripts/ifcfg-ens33**文件(虚拟机不同，文件名可能不同），将**BOOTPROTO**配置为**dhcp**，**ONBOOT=yes**  
+用vim修改/etc/sysconfig/network-scripts/ifcfg-ens33文件(虚拟机不同，文件名可能不同），将**BOOTPROTO**配置为**dhcp**，**ONBOOT=yes**  
 注：BOOTPROTO网络配置参数  
     BOOTPROTO=static   静态IP  
     BOOTPROTO=dhcp   动态IP  
