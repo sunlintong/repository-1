@@ -15,7 +15,7 @@
     BOOTPROTO=none   无（不指定）  
     ONBOOT指明在系统启动时是否激活网卡，只有在激活状态的网卡才能去连接网络，进行网络通讯
 ## 5. 安装ssh服务
-(1).检查是否有安装openssh-server: **yum list installed | grep openssh-server*  
+(1).检查是否有安装openssh-server: **yum list installed | grep openssh-server**  
 (2).编辑ssh服务配置文件：**vi /etc/ssh/sshd_config**  
 (3).去除监听端口**port 22**和监听地址**ListenAddress**前的#  
 (4).开启允许远程登录（去掉**PermitRootLogin**前的#）  
@@ -24,4 +24,4 @@
     检查：ps -e|grep sshd  
     检查22端口：netstat -an|grep 22  
 (7).在主机上安装Xshell5，新建会话，设置连接目标的ip和端口号，输入要使用的用户名和密码，完成连接，可以远程控制  
-		我的参考链接：[如何为centos开启ssh服务?]http://blog.csdn.net/lishaojun0115/article/details/70172409
+		我的参考链接：[^如何为centos开启ssh服务?]http://blog.csdn.net/lishaojun0115/article/details/70172409
