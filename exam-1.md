@@ -9,11 +9,11 @@
 ## 3. 设置用户名和密码
 ## 4. 网络配置
 用vim修改\**/etc/sysconfig/network-scripts/ifcfg-ens33**文件(虚拟机不同，文件名可能不同），将**BOOTPROTO**配置为**dhcp**，**ONBOOT=yes**  
-注：BOOTPROTO网络配置参数  
-    BOOTPROTO=static   静态IP  
-    BOOTPROTO=dhcp   动态IP  
-    BOOTPROTO=none   无（不指定）  
-    ONBOOT指明在系统启动时是否激活网卡，只有在激活状态的网卡才能去连接网络，进行网络通讯
+>注：BOOTPROTO网络配置参数  
+>    BOOTPROTO=static   静态IP  
+>    BOOTPROTO=dhcp   动态IP  
+>    BOOTPROTO=none   无（不指定）  
+>    ONBOOT指明在系统启动时是否激活网卡，只有在激活状态的网卡才能去连接网络，进行网络通讯
 ## 5. 安装ssh服务
 (1).检查是否有安装openssh-server: **yum list installed | grep openssh-server**  
 (2).编辑ssh服务配置文件：**vi /etc/ssh/sshd_config**  
