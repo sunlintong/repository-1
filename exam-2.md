@@ -1,6 +1,6 @@
 # 使用shell脚本在CentOS上一键下载、安装、登录mysql，自动创建myapp数据库
 ## 1. check if download the mysql rpm package,if not,download
->ql_rpm_package=`find / -name "mysql*release*rpm*"`  
+	ql_rpm_package=`find / -name "mysql*release*rpm*"`  
 mysql_rpm_package_name=mysql*release*rpm*  
 if [ `find / -name "mysql*release*rpm*"|wc -l` -ne 0 ];then  
 echo -e "yes,you have the mysql rpm package,it's in :\n$mysql_rpm_package\n"  
