@@ -9,6 +9,7 @@
 ## 3. 设置用户名和密码
 ## 4. 网络配置
 用vim修改\**/etc/sysconfig/network-scripts/ifcfg-ens33**文件(虚拟机不同，文件名可能不同），将**BOOTPROTO**配置为**dhcp**，**ONBOOT=yes**  
+然后重启网络服务：service network restart    
 >注：BOOTPROTO网络配置参数  
 >    BOOTPROTO=static   静态IP  
 >    BOOTPROTO=dhcp   动态IP  
