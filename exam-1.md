@@ -27,6 +27,8 @@
 ![4.PNG](picture/4.PNG)  
 (6).开启sshd服务：**sudo service sshd start**  
     检查：ps -e|grep sshd  
+![5.PNG](picture/5.PNG)  
     检查22端口：netstat -an|grep 22  
+![6.PNG](picture/6.PNG)  
 (7).在主机上安装Xshell5，新建会话，设置连接目标的ip和端口号，输入要使用的用户名和密码，完成连接，可以远程控制  
 		我的参考链接：[如何为centos开启ssh服务?](http://blog.csdn.net/lishaojun0115/article/details/70172409)
