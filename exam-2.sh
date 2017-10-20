@@ -205,4 +205,4 @@ create database if not exists myapp;
 show databases;
 exit
 EOF
-echo -e "\ncomplete login and create database myapp!"
+echo -e "\ncomplete login and create database myapp"
