@@ -1,5 +1,6 @@
+#!/bin/bash
 
-ad mysql compressed file 
+#download mysql compressed file 
 if [ `find / -name "mysql*.tar.gz" | wc -l` -eq 0 ];then
 echo  "mysql download begin---------"
 wget http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.15.tar.gz -P /tmp   
