@@ -9,7 +9,7 @@
 ## 3. 设置用户名和密码
 ## 4. 网络配置
 用vi修改`/etc/sysconfig/network-scripts/ifcfg-ens33`文件(虚拟机不同，文件名可能不同），将配置为`BOOTPROTO=dhcp`，`ONBOOT=yes `   
-````linux
+````
 [root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens33
 TYPE=Ethernet
 PROXY_METHOD=none
@@ -38,15 +38,36 @@ IPV6_PRIVACY=no
 (1).检查是否有安装openssh-server: **yum list installed | grep openssh-server**  
 (2).编辑ssh服务配置文件：**vi /etc/ssh/sshd_config**  
 (3).去除监听端口**port 22**和监听地址**ListenAddress**前的#  
-![2.PNG](picture/2.PNG)  
+```
+# If you want to change the port on a SELinux system, you have to tell
+# SELinux about this change.
+# semanage port -a -t ssh_port_t -p tcp #PORTNUMBER
+#
+Port 22
+#AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+``` 
 (4).开启允许远程登录（去掉**PermitRootLogin**前的#）  
-![3.PNG](picture/3.PNG)  
+```
+# Authentication:
+
+#LoginGraceTime 2m
+PermitRootLogin yes
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+````
 (5).开启使用用户名密码作为连接验证（去掉**PasswordAuthentication**前的#），保存退出vi  
-![4.PNG](picture/4.PNG)  
-(6).开启sshd服务：**sudo service sshd start**  
-    检查：ps -e|grep sshd  
-![5.PNG](picture/5.PNG)  
-    检查22端口：netstat -an|grep 22  
-![6.PNG](picture/6.PNG)  
+```
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication yes
+#PermitEmptyPasswords no
+PasswordAuthentication yes
+```  
+(6).开启sshd服务：`service sshd start`
+    检查：`ps -e|grep sshd ` 
+    检查22端口：`netstat -an|grep 22 ` 
+ 
 (7).在主机上安装Xshell5，新建会话，设置连接目标的ip和端口号，输入要使用的用户名和密码，完成连接，可以远程控制  
 		我的参考链接：[如何为centos开启ssh服务?](http://blog.csdn.net/lishaojun0115/article/details/70172409)
