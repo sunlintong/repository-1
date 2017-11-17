@@ -9,7 +9,7 @@
 ## 3. 设置用户名和密码
 ## 4. 网络配置
 用vi修改`/etc/sysconfig/network-scripts/ifcfg-ens33`文件(虚拟机不同，文件名可能不同），将配置为`BOOTPROTO=dhcp`，`ONBOOT=yes `   
-<table><tr><td bgcolor=#00000>
+<table><tr><td bgcolor=orange>
 [root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens33
 TYPE=Ethernet
 PROXY_METHOD=none
