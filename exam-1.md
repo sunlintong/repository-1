@@ -9,7 +9,7 @@
 ## 3. 设置用户名和密码
 ## 4. 网络配置
 用vi修改`/etc/sysconfig/network-scripts/ifcfg-ens33`文件(虚拟机不同，文件名可能不同），将配置为`BOOTPROTO=dhcp`，`ONBOOT=yes `   
-<table><tr><td bgcolor=orange>
+````
 [root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens33
 TYPE=Ethernet
 PROXY_METHOD=none
@@ -27,7 +27,7 @@ UUID=4ca165f8-7949-445b-8d12-dc240aa387a1
 DEVICE=ens33
 ONBOOT=yes
 IPV6_PRIVACY=no
-</td></tr></table>
+````
 然后重启网络服务：`service network restart `   
 >    BOOTPROTO网络配置参数  
 >    BOOTPROTO=static   静态IP  
