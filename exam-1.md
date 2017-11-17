@@ -1,4 +1,4 @@
-# 一.安装vmware12.5.7
+﻿# 一.安装vmware12.5.7
 # 二.在vmware上安装CentOS-7
 ## 1. 基本设置
 内存：1G;  
@@ -8,10 +8,28 @@
 ## 2. 磁盘分区
 ## 3. 设置用户名和密码
 ## 4. 网络配置
-用vim修改\**/etc/sysconfig/network-scripts/ifcfg-ens33**文件(虚拟机不同，文件名可能不同），将**BOOTPROTO**配置为**dhcp**，**ONBOOT=yes**  
-![1.PNG](picture/1.PNG)  
-然后重启网络服务：service network restart    
->注：BOOTPROTO网络配置参数  
+用vi修改`/etc/sysconfig/network-scripts/ifcfg-ens33`文件(虚拟机不同，文件名可能不同），将配置为`BOOTPROTO=dhcp`，`ONBOOT=yes `   
+<table><tr><td bgcolor=#00000>
+[root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens33
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=ens33
+UUID=4ca165f8-7949-445b-8d12-dc240aa387a1
+DEVICE=ens33
+ONBOOT=yes
+IPV6_PRIVACY=no
+</td></tr></table>
+然后重启网络服务：`service network restart `   
+>    BOOTPROTO网络配置参数  
 >    BOOTPROTO=static   静态IP  
 >    BOOTPROTO=dhcp   动态IP  
 >    BOOTPROTO=none   无（不指定）  
